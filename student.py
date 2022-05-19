@@ -58,9 +58,16 @@ class Piggy(PiggyParent):
     ****************
     '''
     def desh(self):
-      self.fwd()
-      time.sleep (1)
-      self.stop()
+     while True:
+       self.servo(self.MIDPOINT)
+       self.fwd()
+       if self.read_distance()<=500
+        self.stop()
+        self.turn_by_deg(180)
+
+
+
+      
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
