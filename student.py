@@ -82,9 +82,14 @@ class Piggy(PiggyParent):
 
     def safe_to_dance(self):
         self.servo (1000)
-
         time.sleep(1)
-        return False
+        if self.read_distance ()<500:
+          return False
+        
+        self.servo (2000)
+        time.sleep(1)
+        if self.read_distance ()<500:
+          return False
       
 
     def shake(self):
