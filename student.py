@@ -2,7 +2,7 @@
 from teacher import PiggyParent
 import sys
 import time
-
+`
 class Piggy(PiggyParent):
 
     '''
@@ -66,13 +66,24 @@ class Piggy(PiggyParent):
         # TODO: check to see if it's safe before dancing
         
         # lower-ordered example...
-        self.right(primary=50, counter=50)
+        self.right()
         time.sleep(2)
         self.stop()
 
+        self.fwd()
+        time.sleep (2)
+        self.stop
+
+        self.right()
+        time.sleep (2)
+        self.stop
+      
+
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
-        pass
+
+      time.sleep(2)
+      
 
     def shake(self):
         """ Another example move """
@@ -122,11 +133,8 @@ if __name__ == "__main__":  # only run this loop if this is the main file
 
     if sys.version_info < (3, 0):
         sys.stdout.write("Sorry, requires Python 3.x\n")
-        p.quit()
-
-    try:
-        while True:  # app loop
-            p.menu()
-
-    except KeyboardInterrupt: # except the program gets interrupted by Ctrl+C on the keyboard.
-        p.quit()  
+    def move_around-box(self):
+      safe = true
+      while = true
+        self. servo(self.MIpoint)
+        
