@@ -66,23 +66,25 @@ class Piggy(PiggyParent):
         # TODO: check to see if it's safe before dancing
         
         # lower-ordered example...
-        self.right()
-        time.sleep(2)
-        self.stop()
-
-        self.fwd()
-        time.sleep (2)
-        self.stop()
-
-        self.right()
-        time.sleep (2)
-        self.stop()
-      
-
-    def safe_to_dance(self):
+        if self.safe_to_dance():
+          self.right()
+          time.sleep(2)
+          self.stop()
+  
+          self.fwd()
+          time.sleep (2)
+          self.stop()
+  
+          self.right()
+          time.sleep (2)
+          self.stop()
         
 
-      time.sleep(2)
+    def safe_to_dance(self):
+        self.servo (1000)
+
+        time.sleep(1)
+        return False
       
 
     def shake(self):
