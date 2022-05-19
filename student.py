@@ -90,6 +90,8 @@ class Piggy(PiggyParent):
         time.sleep(1)
         if self.read_distance ()<500:
           return False
+
+        return True
       
 
     def shake(self):
