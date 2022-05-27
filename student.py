@@ -161,6 +161,7 @@ class Piggy(PiggyParent):
             
     def final(self):
       while True:
+        self.fwd (30,30)
         self.servo (1000)
         time.sleep(.25)
         if self.read_distance ()<500:
