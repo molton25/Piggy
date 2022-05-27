@@ -123,10 +123,7 @@ class Piggy(PiggyParent):
             self.scan_data[angle] = self.read_distance()
 
     def move_around_a_box(self):
-      while True:
-        self.servo(self.MIDPOINT)
-        self.fwd()
-        if self.read_distance()<= 200:
+      
           self.stop()
           self.servo(1000)
           time.sleep(0.25)
@@ -161,7 +158,36 @@ class Piggy(PiggyParent):
             self.right()
             time.sleep(0.8)
             self.stop()
+            
+    def final(self):
+       self.servo (1000)
+        time.sleep(.25)
+        if self.read_distance ()<500:
+          self.servo (self.MIDPOINT)
+          time.sleep(.25)
+          if self.read_distance ()<500:
+            self.move_around_a_box()
+          else:
+            self.left(primary=90, counter=60)
+            time.sleep(1)
+            self.right(primary=90, counter=60)
+            time.sleep(1)
+            
+        self.servo (2000)
+        time.sleep(.25)
+        if self.read_distance ()<500:
+          self.servo (self.MIDPOINT)
+          time.sleep(.25)
+          if self.read_distance ()<500:
+            self.move_around_a_box()
+          else:
+            self.right(primary=90, counter=60)
+            time.sleep(1)
+            self.left(primary=90, counter=60)
+            time.sleep(1)
 
+
+      
     def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
         pass
